@@ -1,12 +1,13 @@
 // Pull in required dependencies
 var mysql = require('mysql');
+var heroku = "https://salty-earth-33347.herokuapp.com/";
 
 // Create the MySQL connection object
 var connection;
 
-if (process.env.JAWSDB_URL) {
+if (process.env.heroku) {
 	// DB is JawsDB on Heroku
-	connection = mysql.createConnection(process.env.JAWSDB_URL);
+	connection = mysql.createConnection(process.env.heroku);
 } else {
 	// DB is local on localhost
 	connection = mysql.createConnection({
